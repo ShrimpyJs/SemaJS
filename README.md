@@ -10,6 +10,27 @@ Using ES6 with code generators to compile code pre run.
 Approx 10k uncompiled.
 ```
 
+## View Model
+All content of the page comes in a form of view/model.
+A model can have one or more views.
+When a model is loaded it will automatically update all his views.
+When a view is loaded it will get be added the model to create a view/component.
+
+```
+{
+   "models": [{
+      "key": "HW",
+      "value": "Hello World"
+   }],
+   "views": [{
+      "modelKey": "HW",
+      "containerId": "content",
+      "component": "TextDisplay"
+   }]
+}
+```
+
+
 ## Core
 The core include the following
 
