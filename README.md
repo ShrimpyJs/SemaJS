@@ -116,8 +116,7 @@ style.generated.css
 ### Templates
 Convert all the html template files into generated js files
 ```
-template.html ->
-template.generated.js
+template.html -> template.generated.js
 
 <div id="${view.id}">${model.value}</div>
 
@@ -131,7 +130,10 @@ function create(view, model) {
    return `<div id="${view.id}">${model.value}</div>`;
 }
 ```
-```
+
+### Preview
+All components are displayed in an html table generated from
+the html temlpate and the stub.js for quick preview.
 
 
 
