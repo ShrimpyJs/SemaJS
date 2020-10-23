@@ -20,7 +20,7 @@ View Repositorty, creates and manage components.
 ### Request
 Send/load data
 
-### Evemt
+### Event
 Dispatch/subscribe events, one central points for all dom evetnts.
 No need to add/remove most of the event listeners, 
 they will be auto delegated to the view.
