@@ -29,3 +29,46 @@ they will be auto delegated to the view.
 View to Model bindings created when the views are loaded,
 removed when the views removed.
 The bindings are string key based, no elements is used as refrence.
+
+## Componetns
+The components are bounded the same inteface:
+
+```
+module.exports = {
+   create,
+   init,
+   render,
+   onEvent.
+   onDocumentEvent,
+   onWindowsEvent,
+   distroy
+};
+```
+The only mandatory method is create.
+
+### Structure
+
+All componets has the same structure
+
+```
+main.js
+style.scss
+template.html
+```
+Once the build is run, template.generated will be added,
+the tempalte can use ES6 string literals that will be auto replaces with the model.
+```
+module.exports = {
+   create
+};
+
+function create(view, model) {
+   return `<div id="${view.id}">${model.value}</div>`;
+}
+```
+
+
+
+
+
+
