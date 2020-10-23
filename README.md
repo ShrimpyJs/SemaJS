@@ -57,15 +57,8 @@ template.html
 ```
 Once the build is run, template.generated will be added,
 the tempalte can use ES6 string literals that will be auto replaces with the model.
-```
-module.exports = {
-   create
-};
+See below for example in the Build section.
 
-function create(view, model) {
-   return `<div id="${view.id}">${model.value}</div>`;
-}
-```
 When running Jest in Webpack the followig files can be used
 ```
 spec.js
@@ -84,6 +77,60 @@ describe("Hello world test", () => {
     expect(result).toEqual(expected);
   });
 });
+```
+
+## Build
+Before a project is compoiles, a node build runs and does the following.
+
+### Componentss
+Find all the components create under the 'conponents' folder and builds compoent factory
+```
+components.generated.js
+```
+
+```
+module.exports = {
+   get: get
+};
+
+const components = {
+    HelloWorld: require('../components/HelloWorld/main.js'),
+};
+
+function get(type) {
+   if (components[type] == null) {
+      console.log('component not found for ', type);
+   }
+
+   return components[type];
+}
+```
+
+### Style
+compile all the scss files into one and creates
+```
+style.generated.scss
+style.generated.css
+```
+
+### Templates
+Convert all the html template files into generated js files
+```
+template.html ->
+template.generated.js
+
+<div id="${view.id}">${model.value}</div>
+
+to 
+
+module.exports = {
+   create
+};
+
+function create(view, model) {
+   return `<div id="${view.id}">${model.value}</div>`;
+}
+```
 ```
 
 
