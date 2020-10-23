@@ -71,7 +71,7 @@ When running Jest in Webpack the followig files can be used
 spec.js
 stub.josn
 ```
-Test would be comparing the template result
+Test could be comparing the template result
 ```
 const main = require('./main');
 const stub =  require('./stub');
