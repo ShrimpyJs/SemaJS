@@ -66,8 +66,25 @@ function create(view, model) {
    return `<div id="${view.id}">${model.value}</div>`;
 }
 ```
+When running Jest in Webpack the followig files can be used
+```
+spec.js
+stub.josn
+```
+Test would be comparing the template result
+```
+const main = require('./main');
+const stub =  require('./stub');
 
-
+describe("Hello world test", () => {
+  test("html template", () => {
+    const result = main.create(stub.view, stub.model);
+    const expected ="<div>Hello World</div>";
+    
+    expect(result).toEqual(expected);
+  });
+});
+```
 
 
 
