@@ -3,7 +3,7 @@ library/structure for single page applications.
 
 Created to remove the need to used large libraries like React, angular for small to large project.
 
-SemaJs doesn't support routing, for routing library please check \bSemaFeJS\b
+SemaJs doesn't support routing, for routing library please check SemaFeJS
 
 Tiny but powerfull library as alternative for javascript framework.
 Using ES6 with code generators to compile code pre run.
